@@ -1,25 +1,24 @@
-const sumAll = function(num1, num2) {
-    let sum = 0;
+const sumAll = function(min, max) {
 
-    if (num1 < 0 || 
-    num2 < 0 || 
-    !Number.isInteger(num1) || 
-    !Number.isInteger(num2) ||
-    typeof num1 !== "number" ||
-    typeof num2 !== "number") {
-        sum = "ERROR";
+    if (!Number.isInteger(min) || !Number.isInteger(max)) {
+        return "ERROR";
+    }
+
+    if (min > max) {
+        let temp = min;
+        min = max;
+        max = temp;
+    }
+
+    if (min < 0) {
+        return "ERROR";
     } else {
-        // Swap the numbers if first one is larger
-        if (num1 > num2) {
-            let temp = num1;
-            num1 = num2;
-            num2 = temp;
-        }
-        for (let i = num1; i <= num2; i++) {
+        let sum = 0;
+        for (let i = min; i <= max; i++) {
             sum += i;
         }
-    };
-    return sum;
+        return sum;
+    }
 }
 
 // Do not edit below this line
