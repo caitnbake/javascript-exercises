@@ -1,7 +1,7 @@
 const palindromes = function (original) {
     const cleaned = cleanInput(original);
     const reverse = reverseInput(cleaned);
-    
+
     if (cleaned === reverse) {
         return true;
     } else {
@@ -10,7 +10,7 @@ const palindromes = function (original) {
 };
 
 const cleanInput = (original) => {
-    return original.replace(/\W/g, "");
+    return original.replace(/\W/g, "").toLowerCase();
 }
 
 const reverseInput = (cleaned) => {
