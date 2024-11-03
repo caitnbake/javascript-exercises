@@ -2,11 +2,7 @@ const palindromes = function (original) {
     const cleaned = cleanInput(original);
     const reverse = reverseInput(cleaned);
 
-    if (cleaned === reverse) {
-        return true;
-    } else {
-        return false;
-    }
+    return cleaned === reverse;
 };
 
 const cleanInput = (original) => {
